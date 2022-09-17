@@ -2,16 +2,17 @@ package PatronState;
 
 public class Auto {
     private AutoState estadoActual;
-    private Integer combustible;
+    private Double combustible;
     private Double velocidad;
 
-    public Auto(Integer combustible) {
+    public Auto(Double combustible) {
         this.combustible = combustible;
+        this.estadoActual = new Parado(this);
     }
     public void setEstadoActual(AutoState estadoActual) {
         this.estadoActual = estadoActual;
     }
-    public void setCombustible(Integer combustible) {
+    public void setCombustible(Double combustible) {
         this.combustible = combustible;
     }
 
@@ -23,7 +24,7 @@ public class Auto {
         return estadoActual;
     }
 
-    public Integer getCombustible() {
+    public Double getCombustible() {
         return combustible;
     }
 

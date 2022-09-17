@@ -6,7 +6,7 @@ public class Parado implements AutoState{
     public Parado(Auto auto) {
         this.auto = auto;
     }
-
+    @Override
     public void acelerar() {
         if(this.auto.getCombustible()>0){
             System.out.println("Acelerando..");
@@ -17,10 +17,12 @@ public class Parado implements AutoState{
             this.auto.setEstadoActual(new SinCombustible(this.auto));
         }
     }
+    @Override
     public void contacto() {
         System.out.println("Auto apagado");
         this.auto.setEstadoActual(new Apagado(this.auto));
     }
+    @Override
     public void frenar() {
         System.out.println("El auto esta parado. No se puede frenar");
     }
